@@ -1,0 +1,18 @@
+{% extends "classroom/teachers/teachers_home.html" %}
+
+{% block content1 %}
+<a class="btn btn-primary" href="{% url 'teachers:disease_create' %}">Create new Disease</a>
+<table class="table table-sm table-bordered">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>name</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.name }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

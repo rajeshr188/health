@@ -1,0 +1,29 @@
+{% extends 'classroom/teachers/teachers_home.html' %}
+{%block content1%}<a type="button" href="{% url 'teachers:appointment_create'%}" class="btn btn-success">Create New Appointment</a>
+<div class="card">
+
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>date</th>
+        <th>Patient</th>
+        <th>doctor</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for app in apps %}
+        <tr>
+          <td class="align-middle">{{ app.date }}</td>
+          <td class="align-middle">{{ app.patient }}</td>
+          <td class="align-middle">{{ app.doctor }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td class="bg-light text-center font-italic" colspan="4">No quiz matching your interests right now.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{%endblock%}

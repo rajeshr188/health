@@ -1,0 +1,10 @@
+{% extends "classroom/teachers/teachers_home.html" %}
+{% block content1 %}
+<p><a class="btn btn-default" href="{% url 'teachers:feedback_list' %}">FeedBack Listing</a></p>
+<table class="table">
+<tr><td>comment</td><td>{{ object.comment }}</td></tr>
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit FeedBack</a>
+
+{% endblock %}

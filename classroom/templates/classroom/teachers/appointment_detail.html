@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'teachers:appointment_list' %}">Appointment Listing</a></p>
+<table class="table">
+<tr><td>created</td><td>{{ object.date }}</td></tr>
+<tr><td>Doctor</td><td>{{ object.doctor }}</td></tr>
+</table>
+<!-- <a class="btn btn-primary" href="{{object.get_update_url}}">Edit Appointment</a> -->
+
+{% endblock %}
